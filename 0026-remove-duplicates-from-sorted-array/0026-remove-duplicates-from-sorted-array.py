@@ -6,7 +6,7 @@ class Solution(object):
         """
         l = 0
         r = 1
-        for i in range(len(nums) - 1):
+        while r != len(nums):
             if nums[l] == nums[r]:
                 nums.pop(r)
                 
