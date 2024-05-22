@@ -10,13 +10,15 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        hash_set = set()
+       
+        slow, fast = head, head
 
-        while head:
-            hash_set.add(head)
-            head = head.next
+        while fast and fast.next:
+            
+            slow = slow.next
+            fast = fast.next.next
 
-            if head in hash_set:
+            if slow == fast:
                 return True
         return False
 
