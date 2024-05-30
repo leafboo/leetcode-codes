@@ -1,27 +1,20 @@
 class Solution(object):
     def plusOne(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
-        
+    
         num = len(digits) - 1
         isFinished = False
         toggle = False
 
-        while not isFinished and digits[num] != 0:
-            if digits[num] + 1 > 9:
+        while not isFinished:
+            if digits[num] == 9:
                 digits[num] = 0
-                num -= 1
                 toggle = True
+            elif digits[0] == 0 and toggle:
+                isFinished = True
             else:
                 digits[num] += 1
-                isFinished = True
-         
-        if digits[0] == 0 and toggle:
-            return [1] + digits
-        elif digits[num] == 0:
-            digits[num] += 1
-        return digits
+                return digits
+            num -= 1
+        return [1] + digits
             
         
