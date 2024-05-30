@@ -4,17 +4,19 @@ class Solution(object):
         isFinished = False
         toggle = False
 
-        while digits[num] == 9:
-            
-            digits[num] = 0
-            num -= 1
-            toggle = True
-           
+        while not isFinished and digits[num] != 0:
+            if digits[num] + 1 > 9:
+                digits[num] = 0
+                num -= 1
+                toggle = True
+            else:
+                digits[num] += 1
+                isFinished = True
          
         if digits[0] == 0 and toggle:
             return [1] + digits
-        
-        digits[num] += 1
+        elif digits[num] == 0:
+            digits[num] += 1
         return digits
             
         
