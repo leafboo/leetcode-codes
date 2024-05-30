@@ -1,6 +1,5 @@
 class Solution(object):
     def plusOne(self, digits):
-    
         num = len(digits) - 1
         isFinished = False
         toggle = False
