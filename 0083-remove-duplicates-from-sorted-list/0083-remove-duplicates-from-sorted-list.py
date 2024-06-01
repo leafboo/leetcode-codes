@@ -5,17 +5,11 @@
 #         self.next = next
 class Solution(object):
     def deleteDuplicates(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
         if not head:
             return head
 
         pointer = head
         checker = pointer.next
-
-
 
         while checker:
             if checker.val != pointer.val:
