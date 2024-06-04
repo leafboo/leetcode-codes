@@ -9,6 +9,7 @@ class Solution(object):
         headAlen, headBlen = 1, 1
         tempA, tempB = headA.next, headB.next
 
+        # get length
         while tempA:
             tempA = tempA.next
             headAlen += 1
@@ -17,6 +18,7 @@ class Solution(object):
             headBlen += 1
         tempA, tempB = headA, headB
 
+        # cut excess node/s
         while headAlen < headBlen:
             tempB = tempB.next
             headBlen -= 1
@@ -24,13 +26,13 @@ class Solution(object):
             tempA = tempA.next
             headAlen -= 1
 
+        # compare nodes
         for i in range(headAlen):
             if tempA == tempB:
                 return tempA
             tempA = tempA.next
             tempB = tempB.next
 
-       
         return None
 
         
